@@ -24,7 +24,6 @@ RUN wget -q https://worksheets.codalab.org/rest/bundles/0x15a09c8f74f94a20bec0b6
          -O /src/deep_srl/data/glove/glove.6B.100d.txt
 
 COPY service /src/service
-COPY start.py /
 
 ENV PYTHONPATH=/src/:/src/deep_srl/python
 
