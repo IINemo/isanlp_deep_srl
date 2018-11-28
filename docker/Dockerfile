@@ -20,7 +20,7 @@ RUN cd /src/deep_srl/resources && \
 
 #COPY glove.6B.100d.txt /src/deep_srl/data/glove/
 RUN mkdir -p /src/deep_srl/data/glove/
-RUN wget -q https://worksheets.codalab.org/rest/bundles/0x15a09c8f74f94a20bec0b68a2e6703b3/contents/blob/ \
+RUN wget -q https://worksheets.codalab.org/rest/bundles/0x1954091f78384fcf8ad0ca5e40b01b2e/contents/blob/ \
          -O /src/deep_srl/data/glove/glove.6B.100d.txt
 
 COPY service /src/service
