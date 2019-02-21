@@ -70,4 +70,4 @@ DEEP_SRL = PipelineCommon([(ProcessorDeepSrlWrapper("/src/deep_srl/resources/con
                                                     "/src/deep_srl/resources/conll05_model"), 
                            ['tokens', 'sentences'], 
                            {0 : 'srl'})],
-                          name = 'main')
+                          name = 'default')

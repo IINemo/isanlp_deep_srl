@@ -20,8 +20,11 @@ RUN cd /src/deep_srl/resources && \
 
 #COPY glove.6B.100d.txt /src/deep_srl/data/glove/
 RUN mkdir -p /src/deep_srl/data/glove/
-RUN wget -q https://worksheets.codalab.org/rest/bundles/0x15a09c8f74f94a20bec0b68a2e6703b3/contents/blob/ \
-         -O /src/deep_srl/data/glove/glove.6B.100d.txt
+RUN wget -q http://nlp.stanford.edu/data/glove.6B.zip -O /src/deep_srl/data/glove/glove.6B.zip
+RUN apt-get install -y unzip
+RUN cd /src/deep_srl/data/glove/ && unzip ./glove.6B.zip
+#RUN wget -q https://worksheets.codalab.org/rest/bundles/0x15a09c8f74f94a20bec0b68a2e6703b3/contents/blob/ \
+#         -O /src/deep_srl/data/glove/glove.6B.100d.txt
 
 COPY service /src/service
 

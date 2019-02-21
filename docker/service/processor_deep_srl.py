@@ -57,6 +57,7 @@ class ProcessorDeepSrl:
         for sent in sentences:
             num_tokens = len(sent)
             s0 = string_sequence_to_ids(sent, self.pid_data.word_dict, True)
+            s0 = [e if e < 33397 else 0 for e in s0] # TODO: Ugly FIX There is a mismatch in a Conll2005 dictionary and a model 
             l0 = [0 for _ in s0]
             x, _, _, weights = self.pid_data.get_test_data([(s0, l0)], batch_size=None)
             pid_pred, scores0 = self.pid_pred_function(x, weights)
