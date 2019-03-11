@@ -71,6 +71,7 @@ class ProcessorDeepSrl:
                     s1.append((s0, feats, l0))
 
             if len(s1) == 0:
+                srl_sent.append([])
                 continue
 
             # Semantic role labeling.
